@@ -1,30 +1,28 @@
 name: Build Project
+
 on:
   push:
     branches:
       - '*/*'
       - '*'
 
-
 jobs:
- # Job: Build
+  # Job: Build
   build:
     runs-on: ubuntu-latest
-    
- # Steps for the build job
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
+    # Steps for the build job
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Install dependencies
-      run: npm install
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-    - name: Build
-      run: npm run build
+      - name: Install dependencies
+        run: npm install
 
-      
+      - name: Build
+        run: npm run build
