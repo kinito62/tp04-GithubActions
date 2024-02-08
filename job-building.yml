@@ -1,0 +1,9 @@
+jobs:
+ # Job: Build
+  build:
+    runs-on: npm-latest
+ # Steps for the build job
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
