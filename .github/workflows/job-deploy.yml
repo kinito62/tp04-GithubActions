@@ -5,7 +5,18 @@
  # Steps for the deploy job
   steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
+
+    -name: Deploy to GitHub Pages Artifact
+    uses: actions/upload-pages-artifact@v2
+    
+    - name: Deploy to GitHub Pages
+    uses: actions/deploy-pages@v3
 
     - name: Deploy to production
       run: echo "Deploying to production..."
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
